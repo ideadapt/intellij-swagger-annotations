@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.4.22'
+}
+
+group 'net.ideadapt'
+version '1.2-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'io.swagger.core.v3', name: 'swagger-annotations', version: '2.1.4'
+    testCompile group: 'io.swagger', name: 'swagger-annotations', version: '1.6.2'
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '2020.1.4'
+	plugins 'java'
+}
+
+patchPluginXml {
+    changeNotes """
+      ApiOperation and ApiImplicitParams annotation support"""
+}
+
+test {
+    systemProperty "idea.home.path", "/Applications/IntelliJ IDEA.app/Contents"
+}
+
+runIde {
+    autoReloadPlugins = true
+}

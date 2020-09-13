@@ -1,0 +1,24 @@
+<idea-plugin>
+    <id>net.ideadapt.swagger-annotations</id>
+    <name>Swagger Annotations</name>
+    <vendor email="kunz@ideadapt.net" url="http://www.ideadapt.net">ideadapt.net</vendor>
+
+    <description><![CDATA[
+        Various editor features related to Swagger / OpenApi annotations:
+        <ul>
+            <li>Code folding for annotations: ApiOperation, ApiImplicitParams</li>
+        </ul>
+        ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <lang.foldingBuilder language="JAVA"
+                             order="first"
+                             implementationClass="net.ideadapt.intellij.SwaggerFoldingBuilder"/>
+    </extensions>
+
+    <actions>
+    </actions>
+</idea-plugin>
