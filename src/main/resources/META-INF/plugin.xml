@@ -14,9 +14,12 @@
     <depends>com.intellij.modules.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
+        <!--        <lang.foldingBuilder language="JAVA"-->
+        <!--                             order="first"-->
+        <!--                             implementationClass="net.ideadapt.intellij.SwaggerFoldingBuilder"/>-->
         <lang.foldingBuilder language="JAVA"
                              order="first"
-                             implementationClass="net.ideadapt.intellij.SwaggerFoldingBuilder"/>
+                             implementationClass="net.ideadapt.intellij.SimpleFoldingBuilder"/>
     </extensions>
 
     <actions>
